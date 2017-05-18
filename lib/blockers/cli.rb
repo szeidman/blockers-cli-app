@@ -1,0 +1,3 @@
+class Blockers::CLI
+
+end

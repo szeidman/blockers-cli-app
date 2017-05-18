@@ -1,0 +1,3 @@
+Class Blockers::Scraper
+
+end

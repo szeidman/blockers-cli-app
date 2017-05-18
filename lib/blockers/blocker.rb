@@ -1,0 +1,1 @@
+class Blockers::Blocker
