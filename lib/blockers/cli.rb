@@ -20,10 +20,9 @@ module Blockers
 
     def blocker_list
       puts "Here they are!"
-      Blockers::Blocker.all.each.with_index do |blocker, index|
-        puts "#{index + 1}. #{blocker} "
+      Blockers::Blocker.all.each_with_index do |blocker, i|
+        puts "#{i + 1}. #{blocker.name}"
       end
-      binding.pry
     end
 
     def blocker_info(item)
@@ -33,6 +32,7 @@ module Blockers
     end
 
     def commence
+      Blockers::Blocker.scrape
       display
       blocker_list
       input = nil
@@ -70,6 +70,9 @@ module Blockers
       self.all[index]
     end
 
+    def name
+      @name
+    end
 
     def self.scrape
       doc = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers/sr-goalie-blockers.html'))
