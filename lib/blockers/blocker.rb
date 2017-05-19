@@ -36,5 +36,3 @@ class Blocker
   end
 
 end
-
-Blocker.scrape
