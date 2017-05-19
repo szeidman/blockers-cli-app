@@ -2,4 +2,4 @@
 
 require_relative '../lib/blockers'
 
-Blockers::CLI.new.call
+Blockers::CLI.new.commence
