@@ -28,7 +28,7 @@ class Blockers::Blocker
   end
 
   def self.scrape
-    doc = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers/sr-goalie-blockers.html'))
+    doc = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers/sr-goalie-blockers/sort-by/price/sort-direction/asc.html'))
     doc.css("li.item.span3").each do |item|
       name = item.css("div.caption h2.product-name a").text.gsub("Goalie Blocker", "")
       url = item.css("div.caption h2.product-name a").attribute("href").value

@@ -4,7 +4,7 @@ class Blockers::CLI
     monkeys = "🐵  " * 15
     sticks = "🏒  " * 15
     puts monkeys + "\n" * 2
-    puts "Finally a program for you, a person who wants to see the first 20 blockers on sale at GoalieMonkey.com without necessarily looking at pictures of them." + "\n" * 2
+    puts "Finally a program for you, a person who wants to see the 20 cheapest senior-sized blockers  at GoalieMonkey.com without necessarily looking at pictures of them." + "\n" * 2
     puts sticks  + "\n" * 2
 
   end
