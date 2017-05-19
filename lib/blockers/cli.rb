@@ -28,7 +28,7 @@ module Blockers
     def blocker_info(item)
       puts "You have selected the #{item.name}."
       puts "This blocker is listed for #{item.price}."
-      puts "More information available here: #{item.url}."
+      puts "More information available here: #{item.url}"
     end
 
     def commence
