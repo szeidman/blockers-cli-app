@@ -1,6 +1,10 @@
 require 'pry'
 
+<<<<<<< HEAD
 class Blockers::Cli
+=======
+class Cli
+>>>>>>> 7083a02035a23ad61761d9aa3c67499b283ceacb
 
   def display
     monkeys = "🐵  " * 15
@@ -13,6 +17,7 @@ class Blockers::Cli
 
   def blocker_list
     puts "Here they are!"
+<<<<<<< HEAD
     Blockers::Blocker.all.each.with_index do |blocker, index|
       puts "#{index + 1}. #{blocker} "
     end
@@ -25,6 +30,13 @@ class Blockers::Cli
   end
 
   def commence
+=======
+  end
+
+  end
+
+  def begin
+>>>>>>> 7083a02035a23ad61761d9aa3c67499b283ceacb
     display
     blocker_list
     input = nil
@@ -34,6 +46,7 @@ class Blockers::Cli
       puts "Invalid response; please enter the number (1-20) for which you'd like to see more info, including its price and webpage: "
       input = gets.strip
     end
+<<<<<<< HEAD
     index = input - 1 #change variable or use input_to_index method?
     item = Blockers::Blocker.find(index)
     blocker_info(item)
@@ -42,3 +55,14 @@ class Blockers::Cli
 end
 
 Cli.new.commence
+=======
+    index = input - 1
+    # Drill down on blocker: put in separate method and call it
+    # get blocker:
+    Blocker.find(index)
+
+  end
+
+
+end
+>>>>>>> 7083a02035a23ad61761d9aa3c67499b283ceacb

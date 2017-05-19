@@ -2,7 +2,11 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
+<<<<<<< HEAD
 class Blockers::Blocker
+=======
+class Blocker
+>>>>>>> 7083a02035a23ad61761d9aa3c67499b283ceacb
 
   attr_accessor :name, :url, :price
 

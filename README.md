@@ -1,4 +1,5 @@
 # blockers-cli-app
+<<<<<<< HEAD
 
 A CLI to get information about ice hockey goalie blockers for sale on GoalieMonkey.com
 
@@ -36,3 +37,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/<szeid
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+=======
+A CLI to get information about ice hockey goalie blockers for sale on GoalieMonkey.com
+>>>>>>> 7083a02035a23ad61761d9aa3c67499b283ceacb
