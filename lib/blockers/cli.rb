@@ -1,3 +1,3 @@
-class Blockers::CLI
+class CLI
 
 end
