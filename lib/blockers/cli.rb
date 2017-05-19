@@ -11,15 +11,26 @@ class Cli
 
   end
 
+  def blocker_list
+    puts "Here they are!"
+  end
+
+  end
+
   def begin
     display
+    blocker_list
     input = nil
     puts "For a given blocker, enter the number (1-20) for which you'd like to see more info, including it's price and webpage: "
     input = gets.strip
     while !input.between?(1, 20)
-      puts "Invalid response; please enter the number (1-20) for which you'd like to see more info, including it's price and webpage: "
+      puts "Invalid response; please enter the number (1-20) for which you'd like to see more info, including its price and webpage: "
       input = gets.strip
     end
+    index = input - 1
+    # Drill down on blocker: put in separate method and call it
+    # get blocker:
+    Blocker.find(index)
 
   end
 

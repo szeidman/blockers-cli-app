@@ -19,8 +19,8 @@ class Blocker
     @@all << self
   end
 
-  def self.find(input)
-    self.all[input - 1]
+  def self.find(index)
+    self.all[index]
   end
 
 
