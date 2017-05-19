@@ -29,8 +29,15 @@ class Scraper
     #Blocker name   div.caption h2.product-name a .text
     #Blocker price   div.price-line
     #Blocker URL   div.caption h2.product-name a 'href' .value
+    items = []
+    selection.css("li.item.span3").each do |select|
+      items << {name: select.css("div.caption h2.product-name a").text,
+      price: select.css("span.regular-price span.price").text, url: select.css("div.caption h2.product-name a").attribute("href").value}
+    end
+    items
+    binding.pry
   end
 
 end
 
-Scraper.scrape_blocker_type_page
+Scraper.scrape_blockers_of_type_page('http://www.goaliemonkey.com/equipment/blockers/sr-goalie-blockers.html')
