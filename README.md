@@ -8,7 +8,7 @@ A CLI to get information about ice hockey goalie blockers for sale on GoalieMonk
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blockers'
+gem 'blockers-cli-app'
 ```
 
 And then execute:
@@ -17,11 +17,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install blockers
+    $ gem install blockers-cli-app
 
 ## Usage
 
-TODO: Write usage instructions here
+Run `run` after installing the gem.
 
 ## Development
 
