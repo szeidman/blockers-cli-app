@@ -1,21 +1,49 @@
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
+
 class Blocker
 
-  def page
-    Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers.html'))
+  attr_accessor :category_name :category_url :price :product_name :product_url
+
+  @@all = []
+
+  def initialize
   end
 
-  def categories_main
-    self.page.css("div.category-thums.span3")
-  end
 
-  def categories_scrape
-    categories_main.each do |category|
-      name = category.css("a p.name").text,
-      category_url = category.css("a").attribute("href").value
-      }
+  def self.scraper_main
+    doc = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers.html'))
+    categories = doc.css("div.category-thums.span3")
+    categories.each do |category|
+      category = self.new
+      category.category_name = category.css("a p.name").text
+      category.category_url = category.css("a").attribute("href").value
+      category.scraper_category
     end
-    categories
   end
+
+  def scraper_category
+    all_category = self.category_url.gsub(".html", "/show/all.html")
+    doc = Nokogiri::HTML(open(all_category))
+    doc.css("li.item.span3").each do |item|
+      item.product_name = select.css("div.caption h2.product-name a").text
+      item.price = select.css("span.regular-price span.price").text
+      item.product_url = select.css("div.caption h2.product-name a").attribute("href").value
+  end
+
+  # def categories_main
+  #   self.page.css("div.category-thums.span3")
+  # end
+
+  # def categories_scrape
+  #   categories_main.each do |category|
+  #     name = category.css("a p.name").text,
+  #     category_url = category.css("a").attribute("href").value
+  #     }
+  #   end
+  #   categories
+  # end
 
   def self.scrape_blockers_of_type_page(category_url)
     # Add show/all.html to category_url
