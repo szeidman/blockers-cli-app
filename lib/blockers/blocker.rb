@@ -19,6 +19,10 @@ class Blocker
     @@all << self
   end
 
+  def self.find(input)
+    self.all[input - 1]
+  end
+
 
   def self.scrape
     doc = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers/sr-goalie-blockers.html'))
