@@ -1,6 +1,9 @@
 require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
-Class Blockers::Scraper
+
+class Scraper
 
   def self.scrape_blocker_type_page
     page = Nokogiri::HTML(open('http://www.goaliemonkey.com/equipment/blockers.html'))
@@ -9,13 +12,13 @@ Class Blockers::Scraper
     # Blocker Category URL: (div.category-thums.span3 a).attribute("href").value
     # Category URL should return as category_url
     categories = []
-    page.css("div.category-thums.span").each do |category|
+    page.css("div.category-thums.span3").each do |category|
       categories << {
-        name: category.css("div.category-thums.span3 a p.name").text
-        category_url: category.css("div.category-thums.span3 a").attribute("href").value}
+        name: category.css("a p.name").text,
+        category_url: category.css("a").attribute("href").value
+      }
     end
     categories
-    binding.pry
   end
 
   def self.scrape_blockers_of_type_page(category_url)
@@ -26,7 +29,8 @@ Class Blockers::Scraper
     #Blocker name   div.caption h2.product-name a .text
     #Blocker price   div.price-line
     #Blocker URL   div.caption h2.product-name a 'href' .value
+  end
 
 end
 
-self.scrape_blocker_type_page
+Scraper.scrape_blocker_type_page
