@@ -18,7 +18,7 @@ class Blockers::CLI
 
   def blocker_info(item)
     puts "\n🐒🐒           🐒🐒           🐒🐒           🐒🐒           🐒🐒"
-    puts "\nYou chose the #{item.name.strip}."
+    puts "\nYou chose the #{item.name.strip.chomp(".")}."
     puts "It's listed for #{item.price}."
     puts "Buy it here: \n#{item.url}"
     puts "\n🐒🐒           🏒🏒            🐒🐒          🏒🏒           🐒🐒"
