@@ -22,7 +22,7 @@ class Blockers::CLI
     puts "It's listed for #{item.price}."
     puts "Buy it here: \n#{item.url}"
     puts "\n🐒🐒           🏒🏒            🐒🐒          🏒🏒           🐒🐒"
-    puts "\nTo return to the list, type 'list'.\nTo exit, type 'exit'."
+    puts "\nTo regenerate the list, type 'list'.\nTo exit, type 'exit'."
     input = gets.strip.downcase
     while input != "exit" && input != "list"
       puts "🙉 Invalid response; to return to the list, type 'list.'\nTo exit, type 'exit'."
@@ -31,6 +31,7 @@ class Blockers::CLI
     if input == "exit"
       puts "🙈  So long. Keep blocking the pucks. 🙈"
     elsif input == "list"
+      Blockers::Blocker.delete
       commence
     end
   end
